@@ -12,15 +12,11 @@ namespace WebApplication1
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
+        
         public IEnumerable<TestEntities.PermissionEntity> GridView1_GetData()
         {
             PermissionBL permissionBL = new PermissionBL();
@@ -65,6 +61,7 @@ namespace WebApplication1
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             e.Row.Cells[1].Enabled = false;
+            e.Row.Cells[4].Enabled = false;
         }
     }
 }
